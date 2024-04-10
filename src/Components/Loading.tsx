@@ -3,7 +3,7 @@ import './Loading.css'
 
 const Loading = () => {
   return (
-    <span style={{marginTop:'40vh'}} className="loader"></span>
+    <span style={{marginTop:'50vh'}} className="loader"></span>
   )
 }
 
