@@ -28,6 +28,11 @@ const Trending = () => {
     
   return (
     isLoading ? <Loading/> : <div className='mt-20 mb-10'>
+
+    <div >
+    <h1 className="mb-8 mt-28 text-left ml-20  text-3xl font-bold text-gray-800">Top 15 Most<span className="text-transparent bg-clip-text bg-gradient-to-r to-yellow-400 from-red-400"> Liked Videos</span></h1>
+    </div>
+
     <div className='grid grid-cols-3 gap-10 w-11/12 m-auto'>
         {data.map((item, index)=>  index < 15 && <MediaCard key={item.postId} {...item}/>)}
     </div>
