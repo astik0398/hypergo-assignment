@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# Video Playing Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to our Video Playing Website! This platform allows users to explore and watch a variety of videos conveniently. Below is a detailed guide on how to navigate and utilize our website effectively.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### `1. Homepage`
 
-### `npm start`
+1. Upon accessing the website, users are greeted with the homepage, which displays 10 video cards.
+2. Each video card includes:
+   - A preview image of the video.
+   - The name of the user who uploaded the video.
+   - The title of the video.
+   - The number of likes & comments posted on the video
+3. Users can click on any video card to view the corresponding video in a modal.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `2. Video Modal`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. When a video card is clicked, a modal window appears, displaying the selected video.
+2. The modal provides additional details about the video, including:
+   - Information about the user who uploaded the video.
+   - The name of the user who uploaded the video and the title of the video.
+   - A brief description or summary of the video content.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. TypeScript: TypeScript is used to enhance the development experience by providing static typing and improved tooling support.
+2. Tailwind CSS: Tailwind CSS is utilized for styling the user interface, offering a utility-first approach for rapid development and customization.
 
-### `npm run build`
+## Installation and Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the Video Playing Application locally on your machine, follow below steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Clone the Repository`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/astik0398/hypergo-assignment.git
 
-### `npm run eject`
+### `Navigate to the Project Directory`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+cd hypergo-assignment
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Install Dependencies`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Start the Development Server`
 
-## Learn More
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployement
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application is deployed on Vercel. If you wish you vist the deployed link of the website feel free to check the below link out:
+
+https://hypergo-assignment-sigma.vercel.app/
