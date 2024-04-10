@@ -9,22 +9,16 @@ import OpenModal from './OpenModal'
 
 const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataType) => {
 
-  const navigate = useNavigate()
-
   const [showModal, setShowModal] = useState<boolean>(false)
 
-  function handleImage(postId: string){
-    // navigate(`/media/${postId}`)
+  function handleImage(){
     setShowModal(true)
   }
 
-  console.log(showModal);
-  
-
   return (
-    <div className='shadow-2xl h-5/6 flex gap-4 m-auto pr-5 rounded-2xl bg-white'>
+    <div className='shadow-2xl h-5/6 flex gap-5 m-auto pr-5 rounded-2xl bg-white'>
         <div>
-        <img onClick={()=> {handleImage(postId)}} className='w-80 h-full rounded-bl-2xl rounded-tl-2xl hover:cursor-pointer' src={submission.thumbnail} alt={postId} />
+        <img onClick={handleImage} className='w-80 h-full rounded-bl-2xl rounded-tl-2xl hover:cursor-pointer' src={submission.thumbnail} alt={postId} />
         <div className='flex justify-start items-center gap-3 relative bottom-20 ml-3'>
         <img className="w-10 h-10 rounded-full" src={creator.pic} alt="Rounded avatar"/>
         <h4 className='text-xl font-bold text-[#ffffff]'>@{creator.handle}</h4>

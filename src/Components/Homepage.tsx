@@ -27,8 +27,8 @@ const Homepage = () => {
     }, [page])
 
   return (
-    isLoading ? <Loading/> : <div className='mt-10'>
-    <div className='grid grid-cols-3 gap-5'>
+    isLoading ? <Loading/> : <div>
+    <div className='grid grid-cols-3 gap-10 w-11/12 m-auto'>
         {data.map((item)=>  <MediaCard key={item.postId} {...item}/>)}
     </div>
 
