@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MediaDataType } from './DataType'
 import like from '../Assets/like.svg'
 import dislike from '../Assets/dislike.svg'
 import shareIcon from '../Assets/share.svg'
 import commentIcon from '../Assets/comments.svg'
-import { useNavigate } from 'react-router-dom'
 import OpenModal from './OpenModal'
 
 const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataType) => {
@@ -16,15 +15,17 @@ const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataTy
   }
 
   return (
-    <div className='shadow-2xl h-5/6 flex gap-5 m-auto pr-5 rounded-2xl bg-white'>
+    <div className='shadow-2xl flex gap-5 m-auto pr-5 bg-white'>
         <div>
-        <img onClick={handleImage} className='w-80 h-full rounded-bl-2xl rounded-tl-2xl hover:cursor-pointer' src={submission.thumbnail} alt={postId} />
-        <div className='flex justify-start items-center gap-3 relative bottom-20 ml-3'>
+        <img onClick={handleImage} className='w-80 hover:cursor-pointer' src={submission.thumbnail} alt={postId} />
+        <div className='flex gap-4 p-2 ml-2'>
+        <div className='flex justify-start items-center gap-2 mt-2 text-red-500'>
         <img className="w-10 h-10 rounded-full" src={creator.pic} alt="Rounded avatar"/>
-        <h4 className='text-xl font-bold text-[#ffffff]'>@{creator.handle}</h4>
         </div>
-        <div className='relative bottom-20 right-7'>
-        <h4 className='text-xl font-bold text-[#ffffff]'>{submission.title}</h4>
+        <div className='text-left'>
+        <h4 className='text-xl font-bold text-[black] '>{submission.title}</h4>
+        <h4 className='text-xl text-red-500'>@{creator.handle}</h4>
+        </div>
         </div>
         </div>
         
