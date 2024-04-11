@@ -27,6 +27,26 @@ Welcome to our Video Playing Website! This platform allows users to explore and 
 1. TypeScript: TypeScript is used to enhance the development experience by providing static typing and improved tooling support.
 2. Tailwind CSS: Tailwind CSS is utilized for styling the user interface, offering a utility-first approach for rapid development and customization.
 
+## Screenshots
+
+### `1. Landing Page`
+
+After successfully running the app you'll be redirected to the homepage of our website
+
+![alt text](<scrnli_4_11_2024_3-57-07 PM.png>)
+
+### `2. Trending Section`
+
+There's a trending section as well where you'll get a list of 15 of our most liked videos. These videos will be based on number of likes from high to low.
+
+![alt text](<scrnli_4_11_2024_3-57-32 PM.png>)
+
+### `3. Pagination`
+
+The homepage of our app has pagination as well. It will display first 10 videos in one page however, if you wish to browse more then you can simply click on `next` and it will then redirect you to the next page.
+
+![alt text](<scrnli_4_11_2024_3-58-13 PM.png>)
+
 ## Installation and Usage
 
 To run the Video Playing Application locally on your machine, follow below steps:
