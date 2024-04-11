@@ -22,6 +22,10 @@ Welcome to our Video Playing Website! This platform allows users to explore and 
    - The name of the user who uploaded the video and the title of the video.
    - A brief description or summary of the video content.
 
+   ### `3. Like & Dislike`
+
+   If you loved any video then you can like the video as well but in case if you are not satisfied with the content then you can hit the dislike button.
+
 ## Technologies Used
 
 1. TypeScript: TypeScript is used to enhance the development experience by providing static typing and improved tooling support.
@@ -35,13 +39,19 @@ After successfully running the app you'll be redirected to the homepage of our w
 
 ![alt text](<scrnli_4_11_2024_3-57-07 PM.png>)
 
-### `2. Trending Section`
+### `2. Playing the video`
+
+In order to play the video you simple need to click on the thumbnail and then a modal will open which will contain the video along with the user profile pic, userhandle, video title and the description.
+
+![alt text](<scrnli_4_11_2024_5-50-09 PM.png>)
+
+### `3. Trending Section`
 
 There's a trending section as well where you'll get a list of 15 of our most liked videos. These videos will be based on number of likes from high to low.
 
 ![alt text](<scrnli_4_11_2024_3-57-32 PM.png>)
 
-### `3. Pagination`
+### `4. Pagination`
 
 The homepage of our app has pagination as well. It will display first 10 videos in one page however, if you wish to browse more then you can simply click on `next` and it will then redirect you to the next page.
 
