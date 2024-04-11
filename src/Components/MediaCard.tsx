@@ -57,7 +57,9 @@ const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataTy
       localStorage.setItem(`like_${postId}`, newCount.toString())
 
       if(dislikeCount>0){
-        setDislikeCount(prev=> prev-1)
+        const newDis = dislikeCount - 1
+        setDislikeCount(newDis)
+        localStorage.setItem(`dislike_${postId}`, newDis.toString());
       }
     }
     setIsLiked(true)
