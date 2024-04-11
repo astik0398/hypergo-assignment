@@ -3,6 +3,7 @@ import { MediaDataType } from './DataType'
 import like from '../Assets/like.svg'
 import likewhite from '../Assets/likewhite.svg'
 import dislike from '../Assets/dislike.svg'
+import dislikewhite from '../Assets/dislikewhite.svg'
 import shareIcon from '../Assets/share.svg'
 import commentIcon from '../Assets/comments.svg'
 import OpenModal from './OpenModal'
@@ -24,12 +25,40 @@ const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataTy
     const storedLikeStatus = localStorage.getItem(`isLiked_${postId}`);
     return storedLikeStatus ? JSON.parse(storedLikeStatus) : false;
   })
+
+  const [dislikeCount, setDislikeCount] = useState<number>(() => {
+    const storedCount = localStorage.getItem(`dislike_${postId}`);
+    return storedCount ? parseInt(storedCount, 10) : 0;
+  });
+
+
+  function handleDislikeCount() {
+
+    if (dislikeCount > 0) {
+      return;
+    }
+
+    const newCount = dislikeCount + 1;
+    setDislikeCount(newCount);
+    localStorage.setItem(`dislike_${postId}`, newCount.toString());
+    setIsLiked(false);
+    localStorage.setItem(`isLiked_${postId}`, 'false');
+    if (isLiked) {
+      const newLikeCount = likeCount - 1;
+      setLikeCount(newLikeCount);
+      localStorage.setItem(`like_${postId}`, newLikeCount.toString());
+    }
+  }
   
   function handleLikeCount(){
     if(!isLiked){
       const newCount = likeCount+1
       setLikeCount(newCount)
       localStorage.setItem(`like_${postId}`, newCount.toString())
+
+      if(dislikeCount>0){
+        setDislikeCount(prev=> prev-1)
+      }
     }
     setIsLiked(true)
     localStorage.setItem(`isLiked_${postId}`, 'true');
@@ -52,10 +81,10 @@ const MediaCard = ({postId, reaction, submission, creator, comment}: MediaDataTy
         </div>
         
         <div className='flex flex-col justify-center gap-10 h-30 m-auto'>
-        <div> <div onClick={handleLikeCount} className={`p-3 ${isLiked ? 'bg-black' : 'bg-gray-100'} rounded-full hover:cursor-pointer`}><img className='w-8' src={isLiked ? likewhite : like} alt={postId} /></div>
+        <div> <div onClick={handleLikeCount} className={`p-3 ${isLiked ? 'bg-black' : 'bg-gray-100'} ease-in duration-500 rounded-full hover:cursor-pointer`}><img className='w-8' src={isLiked ? likewhite : like} alt={postId} /></div>
         <p><b>{likeCount}</b></p>
         </div>
-        <div> <div className='bg-gray-100 p-3 rounded-full hover:cursor-pointer'><img className='w-8' src={dislike} alt={postId} /></div><p><b>Dislike</b></p></div>
+        <div> <div onClick={handleDislikeCount} className={`${dislikeCount == 0 ? 'bg-gray-100' : 'bg-black'} p-3 rounded-full hover:cursor-pointer`}><img className='w-8' src={dislikeCount == 0 ? dislike : dislikewhite} alt={postId} /></div><p><b>{dislikeCount}</b></p></div>
         <div > <div className='bg-gray-100 p-3 rounded-full hover:cursor-pointer'><img className='w-8' src={commentIcon} alt={postId} /></div><p><b>{comment.count}</b></p></div> 
         <div> <div className='bg-gray-100 p-3 rounded-full hover:cursor-pointer'><img className='w-8' src={shareIcon} alt={postId} /></div><p><b>Share</b></p></div>
         </div>
