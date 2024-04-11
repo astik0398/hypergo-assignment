@@ -4,11 +4,11 @@ import { creatorDataType, submissionType } from './DataType'
 const OpenModal = ({showModal, setShowModal, creator, submission, postId}: {showModal: boolean, postId: string, submission: submissionType, creator:creatorDataType, setShowModal: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
     <div className={`${showModal ? 'fixed inset-0 z-50 flex items-center justify-center' : 'hidden'}`}>
-      <div className="fixed inset-0 bg-black opacity-25"></div>
-      <div className="relative w-auto flex max-w-3xl mx-auto my-6">
+      <div className="fixed inset-0 bg-black opacity-30"></div>
+      <div className="relative w-auto flex max-w-5xl  mx-auto my-6">
 
        <div>
-       <video width="320" height="240" controls>
+       <video width="400" height="260" controls>
             <source src={submission.mediaUrl}/>
         </video>
        </div>
@@ -30,9 +30,9 @@ const OpenModal = ({showModal, setShowModal, creator, submission, postId}: {show
             </button>
           </div>
           
-          <div className='w-11/12 m-auto text-left flex flex-col gap-2'>
-          <h3 className="text-lg font-semibold"> {submission && submission.title}</h3>
-          <p>{submission.description}</p>
+          <div className='w-11/12 m-auto text-left flex flex-col gap-8'>
+          <h3 className="text-3xl font-bold"> {submission && submission.title}</h3>
+          <p className='text-xl'>{submission.description}</p>
           </div>
 
           <div className="flex items-center justify-end p-6 border-t border-solid rounded-b">
